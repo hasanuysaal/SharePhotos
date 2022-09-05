@@ -21,5 +21,7 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Uygulama fotpğraf yüklemek için galerinize erişmek istiyor</string>
 </dict>
 </plist>
