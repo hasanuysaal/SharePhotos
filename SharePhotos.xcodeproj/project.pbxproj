@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4086265228C61EA6005367C6 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4086265128C61EA6005367C6 /* FeedViewController.swift */; };
+		4086265428C61EB6005367C6 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4086265328C61EB6005367C6 /* ShareViewController.swift */; };
+		4086265628C61EC7005367C6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4086265528C61EC7005367C6 /* SettingsViewController.swift */; };
 		40F87F0C28C389FA0006376F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F87F0B28C389FA0006376F /* AppDelegate.swift */; };
 		40F87F0E28C389FA0006376F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F87F0D28C389FA0006376F /* SceneDelegate.swift */; };
 		40F87F1028C389FA0006376F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F87F0F28C389FA0006376F /* ViewController.swift */; };
@@ -18,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4086265128C61EA6005367C6 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		4086265328C61EB6005367C6 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		4086265528C61EC7005367C6 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		40F87F0828C389FA0006376F /* SharePhotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharePhotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40F87F0B28C389FA0006376F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40F87F0D28C389FA0006376F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,7 +64,6 @@
 				4A4B2767309D4A4B0E9A6794 /* Pods-SharePhotos.debug.xcconfig */,
 				DD9DCED0CCC9834D7BBCF752 /* Pods-SharePhotos.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -86,6 +91,9 @@
 				40F87F0B28C389FA0006376F /* AppDelegate.swift */,
 				40F87F0D28C389FA0006376F /* SceneDelegate.swift */,
 				40F87F0F28C389FA0006376F /* ViewController.swift */,
+				4086265128C61EA6005367C6 /* FeedViewController.swift */,
+				4086265328C61EB6005367C6 /* ShareViewController.swift */,
+				4086265528C61EC7005367C6 /* SettingsViewController.swift */,
 				40F87F1128C389FA0006376F /* Main.storyboard */,
 				40F87F1428C389FC0006376F /* Assets.xcassets */,
 				40F87F1628C389FC0006376F /* LaunchScreen.storyboard */,
@@ -213,7 +221,10 @@
 			files = (
 				40F87F1028C389FA0006376F /* ViewController.swift in Sources */,
 				40F87F0C28C389FA0006376F /* AppDelegate.swift in Sources */,
+				4086265428C61EB6005367C6 /* ShareViewController.swift in Sources */,
+				4086265228C61EA6005367C6 /* FeedViewController.swift in Sources */,
 				40F87F0E28C389FA0006376F /* SceneDelegate.swift in Sources */,
+				4086265628C61EC7005367C6 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

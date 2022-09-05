@@ -83,10 +83,39 @@
             </objects>
             <point key="canvasLocation" x="63.768115942028992" y="220.98214285714286"/>
         </scene>
+        <!--Settings-->
+        <scene sceneID="U8F-RW-La3">
+            <objects>
+                <viewController id="Qul-ct-D9h" customClass="SettingsViewController" customModule="SharePhotos" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xtu-NJ-80O">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oEE-K2-3U1">
+                                <rect key="frame" x="165.5" y="432.5" width="83.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Sign Out">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="14"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2IV-ZL-qHN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oEE-K2-3U1" firstAttribute="centerY" secondItem="xtu-NJ-80O" secondAttribute="centerY" id="4gq-1g-FoD"/>
+                            <constraint firstItem="oEE-K2-3U1" firstAttribute="centerX" secondItem="xtu-NJ-80O" secondAttribute="centerX" id="a8E-R7-KD1"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape" catalog="system" id="pwI-Di-Yke"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QB9-3t-h7O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1758" y="1286"/>
+        </scene>
         <!--Share-->
         <scene sceneID="BgV-HV-Ufn">
             <objects>
-                <viewController id="Qvo-pG-rQr" sceneMemberID="viewController">
+                <viewController id="Qvo-pG-rQr" customClass="ShareViewController" customModule="SharePhotos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Uag-3Z-hCT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -97,12 +126,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FYJ-0E-2eo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1758" y="524"/>
+            <point key="canvasLocation" x="1758" y="579"/>
         </scene>
         <!--Feed-->
         <scene sceneID="eMj-Og-gdk">
             <objects>
-                <viewController id="hZC-pV-fZY" sceneMemberID="viewController">
+                <viewController id="hZC-pV-fZY" customClass="FeedViewController" customModule="SharePhotos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ljL-kt-Kfo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -120,14 +149,16 @@
             <objects>
                 <tabBarController id="FjJ-3G-Txe" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="1ex-fH-jn0"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3ck-vz-gFO">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3ck-vz-gFO" colorLabel="IBBuiltInLabel-Red">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" systemColor="systemPinkColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="hZC-pV-fZY" kind="relationship" relationship="viewControllers" id="YB4-UT-5xh"/>
                         <segue destination="Qvo-pG-rQr" kind="relationship" relationship="viewControllers" id="NhJ-aA-qAZ"/>
+                        <segue destination="Qul-ct-D9h" kind="relationship" relationship="viewControllers" id="lmT-VS-05z"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hfM-Lj-4jb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -137,12 +168,16 @@
     </scenes>
     <resources>
         <image name="arrowshape.turn.up.forward" catalog="system" width="128" height="106"/>
+        <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
