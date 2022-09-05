@@ -73,6 +73,7 @@
                             <constraint firstItem="zpI-d0-g27" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="pYL-bV-QGF"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="YaO-G6-w5u"/>
                     <connections>
                         <outlet property="emailText" destination="AcU-WH-6xa" id="DPI-lP-sDs"/>
                         <outlet property="passText" destination="zpI-d0-g27" id="60B-bB-o5V"/>
@@ -110,6 +111,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="gearshape" catalog="system" id="pwI-Di-Yke"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toVC" modalPresentationStyle="fullScreen" id="rKI-XA-EOg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QB9-3t-h7O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -150,7 +154,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="nmx-Za-oCV">
             <objects>
-                <tabBarController id="FjJ-3G-Txe" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBar" id="FjJ-3G-Txe" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="1ex-fH-jn0"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3ck-vz-gFO" colorLabel="IBBuiltInLabel-Red">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
