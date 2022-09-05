@@ -97,6 +97,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Sign Out">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="14"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="signOutBtn:" destination="Qul-ct-D9h" eventType="touchUpInside" id="Bp4-7Z-Qr7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2IV-ZL-qHN"/>
