@@ -70,6 +70,9 @@ class ShareViewController: UIViewController, UIImagePickerControllerDelegate, UI
                                         self.spinner.stopAnimating()
                                         let msg = self.alertCreator.createAlert(title: "Success", msg: "The photo shared successfully")
                                         self.present(msg, animated: true, completion: nil)
+                                        self.commentTextField.text = ""
+                                        self.imageView.image = UIImage(named: "image")
+                                        self.tabBarController?.selectedIndex = 0
                                         
                                     }
                                 }
