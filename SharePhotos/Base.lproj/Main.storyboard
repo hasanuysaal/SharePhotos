@@ -123,20 +123,24 @@
         <scene sceneID="BgV-HV-Ufn">
             <objects>
                 <viewController id="Qvo-pG-rQr" customClass="ShareViewController" customModule="SharePhotos" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Uag-3Z-hCT">
+                    <view key="view" contentMode="scaleToFill" id="Uag-3Z-hCT" customClass="Share">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="E0S-bV-oBU">
                                 <rect key="frame" x="25" y="84" width="364" height="225"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="MNR-Pf-hC1"/>
+                                    <constraint firstAttribute="height" constant="225" id="Rba-eB-e9z"/>
+                                </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l0A-du-LQs">
-                                <rect key="frame" x="25" y="329" width="364" height="34"/>
+                                <rect key="frame" x="25" y="620" width="364" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmI-kV-emn">
-                                <rect key="frame" x="150" y="388" width="114" height="31"/>
+                                <rect key="frame" x="150" y="482" width="114" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Share">
                                     <color key="baseBackgroundColor" red="0.81176471709999998" green="0.3421329937" blue="0.38903661039999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -145,25 +149,38 @@
                                     <action selector="shareBtn:" destination="Qvo-pG-rQr" eventType="touchUpInside" id="JT8-2Q-iXG"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="nmd-H1-n78">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="0.68330144557823125" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DqP-RM-Olv">
+                                <rect key="frame" x="170" y="438" width="74" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lBt-ox-ENQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="l0A-du-LQs" firstAttribute="leading" secondItem="lBt-ox-ENQ" secondAttribute="leading" constant="25" id="58j-4s-q8T"/>
-                            <constraint firstItem="lBt-ox-ENQ" firstAttribute="trailing" secondItem="E0S-bV-oBU" secondAttribute="trailing" constant="25" id="ESe-vK-3P3"/>
-                            <constraint firstItem="lBt-ox-ENQ" firstAttribute="trailing" secondItem="hmI-kV-emn" secondAttribute="trailing" constant="150" id="Gsw-ne-Bzo"/>
-                            <constraint firstItem="l0A-du-LQs" firstAttribute="top" secondItem="E0S-bV-oBU" secondAttribute="bottom" constant="20" id="Hvm-Kr-EUU"/>
-                            <constraint firstItem="lBt-ox-ENQ" firstAttribute="trailing" secondItem="l0A-du-LQs" secondAttribute="trailing" constant="25" id="K6F-7t-Nvs"/>
-                            <constraint firstItem="E0S-bV-oBU" firstAttribute="top" secondItem="lBt-ox-ENQ" secondAttribute="top" constant="40" id="P7m-iD-DpD"/>
-                            <constraint firstItem="hmI-kV-emn" firstAttribute="top" secondItem="l0A-du-LQs" secondAttribute="bottom" constant="25" id="bJ4-aI-VJ5"/>
-                            <constraint firstItem="E0S-bV-oBU" firstAttribute="leading" secondItem="lBt-ox-ENQ" secondAttribute="leading" constant="25" id="dSV-xE-BeG"/>
-                            <constraint firstItem="hmI-kV-emn" firstAttribute="leading" secondItem="lBt-ox-ENQ" secondAttribute="leading" constant="150" id="emf-Wg-Qjd"/>
+                            <constraint firstItem="hmI-kV-emn" firstAttribute="leading" secondItem="lBt-ox-ENQ" secondAttribute="leading" constant="150" id="FWF-kX-03c"/>
+                            <constraint firstItem="E0S-bV-oBU" firstAttribute="centerX" secondItem="Uag-3Z-hCT" secondAttribute="centerX" id="G8c-eX-syp"/>
+                            <constraint firstItem="E0S-bV-oBU" firstAttribute="leading" secondItem="l0A-du-LQs" secondAttribute="leading" id="KKQ-xr-Ul5"/>
+                            <constraint firstItem="E0S-bV-oBU" firstAttribute="top" secondItem="lBt-ox-ENQ" secondAttribute="top" constant="40" id="SUV-1a-6B1"/>
+                            <constraint firstItem="E0S-bV-oBU" firstAttribute="trailing" secondItem="l0A-du-LQs" secondAttribute="trailing" id="cBg-MV-fYz"/>
+                            <constraint firstItem="E0S-bV-oBU" firstAttribute="leading" secondItem="lBt-ox-ENQ" secondAttribute="leading" constant="25" id="eHI-w6-zqw"/>
+                            <constraint firstItem="lBt-ox-ENQ" firstAttribute="bottom" secondItem="l0A-du-LQs" secondAttribute="bottom" constant="159" id="guO-QL-nbw"/>
+                            <constraint firstItem="hmI-kV-emn" firstAttribute="centerX" secondItem="l0A-du-LQs" secondAttribute="centerX" id="sIo-O4-Zla"/>
+                            <constraint firstAttribute="bottom" secondItem="hmI-kV-emn" secondAttribute="bottom" constant="383" id="seb-N6-qDc"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Share" image="arrowshape.turn.up.forward" catalog="system" id="wQY-17-SZj"/>
                     <connections>
                         <outlet property="commentTextField" destination="l0A-du-LQs" id="634-2P-2PK"/>
                         <outlet property="imageView" destination="E0S-bV-oBU" id="2QE-NK-k5p"/>
+                        <outlet property="labelLoading" destination="DqP-RM-Olv" id="hI1-qd-tor"/>
+                        <outlet property="spinner" destination="nmd-H1-n78" id="QOF-OE-4le"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FYJ-0E-2eo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
