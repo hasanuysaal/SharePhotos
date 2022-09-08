@@ -71,6 +71,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! FeedCell
         cell.userNameLabel.text = postArr[indexPath.row].email
+        // using library to convert url-to-image (SDWebImage)
         cell.cellImageView.sd_setImage(with: URL(string: self.postArr[indexPath.row].imageUrl))
         cell.commentLabel.text = postArr[indexPath.row].comment
         return cell
