@@ -13,7 +13,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var tableView: UITableView!
     
     var postArr = [Post]()
-    
     var alertCreator = AlertCreator()
     
     override func viewDidLoad() {
@@ -42,14 +41,19 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                     self.postArr.removeAll(keepingCapacity: false)
                     
                     for document in snapshot!.documents {
-        
+                        let docID = document.documentID
+                        
                         if let imageUrl = document.get("imageUrl") as? String{
                             if let email = document.get("email") as? String {
                                 if let comment = document.get("comment") as? String {
-                                    
-                                    let post = Post(email: email, imageUrl: imageUrl, comment: comment)
-                                    self.postArr.append(post)
-
+                                    if let whoLikes = document.get("whoLikes") as? [String] {
+                                        if let likesCount = document.get("likesCount") as? String{
+                                            let post = Post(email: email, imageUrl: imageUrl, comment: comment, whoLikes: whoLikes, docID: docID, likesCount: likesCount)
+                                            self.postArr.append(post)
+                                            
+                                        }
+                                            
+                                    }
                                 }
                             }
                         }
@@ -68,12 +72,20 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         return postArr.count
     }
     
+   
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! FeedCell
+        
         cell.userNameLabel.text = postArr[indexPath.row].email
         // using library to convert url-to-image (SDWebImage)
         cell.cellImageView.sd_setImage(with: URL(string: self.postArr[indexPath.row].imageUrl))
-        cell.commentLabel.text = postArr[indexPath.row].comment
+        cell.likesCountLabel.text = "\(String(postArr[indexPath.row].whoLikes.count)) likes"
+        cell.docID = postArr[indexPath.row].docID
+        cell.likesCount = postArr[indexPath.row].whoLikes.count
+        let userName = postArr[indexPath.row].email.split(separator: "@")
+        cell.commentLabel.text = "\(userName[0]): \(postArr[indexPath.row].comment)"
+        
         return cell
     }
 

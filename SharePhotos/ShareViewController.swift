@@ -18,6 +18,7 @@ class ShareViewController: UIViewController, UIImagePickerControllerDelegate, UI
     @IBOutlet weak var labelLoading: UILabel!
     
     var alertCreator = AlertCreator()
+    private let whoLikes = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +60,7 @@ class ShareViewController: UIViewController, UIImagePickerControllerDelegate, UI
                                 
                                 let fireStoreDB = Firestore.firestore()
                                 
-                                let fireStorePost = ["imageUrl": imageUrl, "comment": self.commentTextField.text!, "email": Auth.auth().currentUser!.email as Any, "Date": FieldValue.serverTimestamp()] as [String : Any]
+                                let fireStorePost = ["imageUrl": imageUrl, "comment": self.commentTextField.text!, "email": Auth.auth().currentUser!.email as Any, "Date": FieldValue.serverTimestamp(), "whoLikes": self.whoLikes, "likesCount": "0"] as [String : Any]
                                 
                                 fireStoreDB.collection("Post").addDocument(data: fireStorePost) { (error) in
                                     if error != nil {
